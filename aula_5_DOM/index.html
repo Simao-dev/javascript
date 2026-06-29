@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: burlywood;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Iniciando aula</h1>
+    <p>Aqui vai o resultado</p>
+    <p>Aprendendo a usar <strong>DOM em javascript</strong></p>
+    <div id="mensagem">Clique em min</div>
+    <script>
+        /*exemplo de DOM*/
+        /*Criamos uma variavel que recebe o window documente getElementsByTagName
+        definimos qual a tag ela recebe dentro do () e definimos qual e a ordem da tag
+        dentro do [] no caso 0 pq quero guardar a primeira tag que tem p na minha pagina*/
+        var p1 = window.document.getElementsByTagName("p")[0]
+        /* usando o documente write podemos mostrar oque esta na minha variável mostrar um texto
+        ou concatenar ela com o texto*/
+        window.document.write("Esta esceito assim: " + p1.innerText)
+        /*Podemos tambem mudar propriedades do css como no exemplo a baixo*/
+        /*No casao do innerText ele puxa apenas o texto que esta dentro do paragrafo mas
+        se usarmos o innerHTML ele puxa da forma que esta declarado com formatação com as tags 
+        filhos, no caso puxa o html inteiro*/
+        p1.style.color = "blue"
+
+        /*Ou trox exemplos*/
+        var corpo = window.document.getElementsByTagName("body")[0]
+        corpo.style.backgroundColor = "black"
+
+        /* selecionando usando o ID da div*/
+        var mensagem = window.document.getElementById("mensagem")
+        mensagem.style.color = "red"
+        mensagem.innerText = "Estou esperando"
+
+        /* Podemos escrever todos os comandos juntos apesar de ser grande é melhor por questões
+        de escopo de variável*/
+        window.document.getElementById("mensagem").innerText = "olá mundo"
+
+        /* forma de fazer usando o seletor */
+        window.document.querySelector("div#mensagem").style.backgroundColor = "blue"
+
+        
+    </script>
+</body>
+</html>
